@@ -1,0 +1,22 @@
+<div class="transfer-money-container">
+    <form class="transfer-money-form pt-form" [formGroup]="moneyTransferForm">
+        <div class="transfer-money-header"><fa-icon [icon]="faWallet" class="mr2"></fa-icon> <strong>Make</strong> Transfer</div>
+        <div class="transfer-money-content">
+            <div class="mb4">
+                <label class="pt-label">From Account</label>
+                <input type="text" disabled class="pt-input" value="My Personal Account: $5826.24" />
+            </div>
+            <div class="mb4">
+                <label class="pt-label">To Account</label>
+                <input type="text" required class="pt-input" formControlName="toAccount" value="" placeholder="type an account name" />
+            </div>
+            <div class="mb1">
+                <label class="pt-label">Amount</label>
+                <input type="text" required class="pt-input" formControlName="amount" placeholder="specify the amount" value="" OnlyNumber />
+            </div>
+        </div>
+        <div class="transfer-money-footer">
+            <app-submit-button class="pt-button" (submitForm)="submitForm($event)"></app-submit-button>
+        </div>
+    </form>
+</div>

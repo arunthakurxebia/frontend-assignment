@@ -39,11 +39,17 @@
         background-image: url('#{$bg-img}');
         background-repeat: repeat-x;
         background-size: cover;
+        position: relative;
+        display: block;
+        float: left;
+        width: 100%;
         @include sm{
             min-height: calc(100vh - 120px);
+            padding: 0 10px;
         }
         @include md{
             min-height: calc(100vh - 90px);
+            padding: 0 50px;
         }
     }
     .pt-footer-container{
