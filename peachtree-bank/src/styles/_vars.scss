@@ -10,6 +10,8 @@ $light-1: #ffffff;
 $dark-1: #000000;
 $dark-2: #555;
 $dark-3: #ff5e00;
+$dark-4: #ccc;
+$dark-1-opacity:rgba(0,0,0,0.4);
 
 //font-size
 $regular-font: 14px;
@@ -80,3 +82,12 @@ $phone:320px;
   }
 }
 @include padding-classes;
+
+@mixin font-weight-classes {
+    @for $i from 1 through $sizes {
+      $weight: $i * 100;
+      /* font-weight #{$weight} */
+      .fw#{$i} {font-weight: $weight;}
+    }
+  }
+  @include font-weight-classes;

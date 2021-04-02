@@ -1,11 +1,18 @@
 @import '../../styles/main.scss';
 .transfer-money-container{
-    width: 300px;
     margin-top: 50px;
+    width: 300px;
+    @include sm{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include md{
+        margin-left: 0;
+    }
     .transfer-money-form{
         .transfer-money-header{
             padding: $medium-spacing;
-            background-color: $primary-blue;;
+            background-color: $primary-blue;
             color: $light-1;
             border-radius: 8px 8px 0 0;
         }

@@ -1,0 +1,21 @@
+<div id="myModal" class="modal" *ngIf="showModal">
+
+    <!-- Modal content -->
+    <div class="modal-content pt-form">
+      <div class="modal-header">
+        <span class="close" (click)="close();">&times;</span>
+        <h2 class="mt2 mb2">Review <span class="fw2">Header</span></h2>
+      </div>
+      <div class="modal-body">
+        <p class="italic">Are you ready to send out this transfer?</p>
+        <p class="fw6">It will be send to account</p>
+        <p>Backbase</p>
+        <p class="fw6">With the amount of:</p>
+        <p>&#8364;{{amount}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="mr4 pt-button light" (click)="close();">Close</button><app-submit-button class="pt-button dark"></app-submit-button>
+      </div>
+    </div>
+  
+  </div>

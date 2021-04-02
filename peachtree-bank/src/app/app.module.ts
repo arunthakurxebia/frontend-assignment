@@ -10,6 +10,7 @@ import { TransferMoneyFormComponent } from './transfer-money-form/transfer-money
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AmountDirective } from './directives/amount.directive';
+import { ReviewModalComponent } from './review-modal/review-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AmountDirective } from './directives/amount.directive';
     SubmitButtonComponent,
     TransactionItemComponent,
     TransferMoneyFormComponent,
-    AmountDirective
+    AmountDirective,
+    ReviewModalComponent
   ],
   imports: [
     BrowserModule,

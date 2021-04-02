@@ -1,25 +1,35 @@
 <div class="transfer-money-container">
-    <form class="transfer-money-form pt-form" [formGroup]="moneyTransferForm">
+    <form class="transfer-money-form pt-form" [formGroup]="moneyTransferForm" (ngSubmit)="submitForm()">
         <div class="transfer-money-header"><fa-icon [icon]="faWallet" class="mr2"></fa-icon> <strong>Make</strong> Transfer</div>
         <div class="transfer-money-content">
             <div class="mb4">
                 <label class="pt-label">From Account</label>
-                <input type="text" disabled class="pt-input" value="My Personal Account: &#8364;5826.24" />
+                <input type="text" disabled class="pt-input" value="My Personal Account: &#8364; {{myBalance}}" />
             </div>
             <div class="mb4">
                 <label class="pt-label">To Account</label>
-                <input type="text" required class="pt-input" formControlName="toAccount" value="" placeholder="type an account name" />
+                <input type="text" required class="pt-input" autofocus tabindex="0" formControlName="toAccount" value="" placeholder="type an account name" />
+                <span class="text-danger"
+                                *ngIf="(moneyTransferFormControl.toAccount.touched || submitted) && moneyTransferFormControl.toAccount.errors?.required">
+                                This field is required
+                            </span>
             </div>
             <div class="mb1">
                 <label class="pt-label">Amount</label>
                 <div class="pt-inp-icon-group">
                     <span class="pt-inp-icon"><fa-icon [icon]="faEuroSign"></fa-icon></span>
-                    <input type="text" required class="pt-input" formControlName="amount" ptAmount placeholder="specify the amount" value="" /> 
+                    <input type="text" required class="pt-input" tabindex="1" formControlName="amount" ptAmount placeholder="specify the amount" value="" />
+                    <span class="text-danger"
+                                *ngIf="((moneyTransferFormControl.toAccount.touched || submitted) && moneyTransferFormControl.toAccount.errors?.required)">
+                                This field is required
+                            </span> 
                 </div>
             </div>
         </div>
         <div class="transfer-money-footer">
-            <app-submit-button class="pt-button" (submitForm)="submitForm($event)"></app-submit-button>
+            <app-submit-button class="pt-button dark"></app-submit-button>
         </div>
     </form>
+    <app-review-modal [show]="showModal" [amount]="amount" (isOpen)="isOpen($event)"></app-review-modal>
 </div>
+
