@@ -1,0 +1,46 @@
+
+// spacing
+$small-spacing: 5px;
+$medium-spacing: 10px;
+$large-spacing: 20px;
+
+// colors
+$primary-blue: #00a1e0;
+
+//font-size
+$regular-font: 14px;
+$large-font: 20px;
+$small-font: 12px;
+
+//screen sizes
+$desktop:990px;
+$tablet:768px;
+$phone:320px;
+
+// phone
+@mixin sm {
+    @media (min-width: #{$phone}) {
+        @content;
+    }
+ }
+ 
+ // Tablet
+ @mixin md {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+ }
+ 
+ // Desktop
+ @mixin lg {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+ }
+
+ // Custom
+@mixin rwd($screen) {
+    @media (min-width: $screen+'px') {
+        @content;
+    }
+ }

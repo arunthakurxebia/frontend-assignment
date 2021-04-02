@@ -1,0 +1,55 @@
+@import '../styles/main.scss';
+.pt-container{
+    .pt-header-container{
+        height: 30px;
+        font-size: $regular-font;
+        padding: $medium-spacing;
+        color: $primary-blue;
+        @include sm {
+            height: 60px;
+        }
+        @include md {
+            height: 30px;
+        }
+        .logo-container{
+            float: left;
+            @include sm {
+                width: 100%;
+                text-align: center;
+            }
+            @include md {
+                width: 50%;
+                text-align: left;
+            }
+        }
+        .header-title{
+            line-height: 30px;
+            float: left;
+            @include sm {
+                width: 100%;
+                text-align: center;
+            }
+            @include md {
+                width: 50%;
+                text-align: right;
+            }
+        }
+    }
+    .pt-main-container{
+        background-image: url('#{$bg-img}');
+        background-repeat: repeat-x;
+        background-size: cover;
+        @include sm{
+            min-height: calc(100vh - 120px);
+        }
+        @include md{
+            min-height: calc(100vh - 90px);
+        }
+    }
+    .pt-footer-container{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+}
