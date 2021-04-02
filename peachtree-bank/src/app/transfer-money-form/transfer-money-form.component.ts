@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faWallet } from '@fortawesome/free-solid-svg-icons';
+import { faEuroSign, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core';
 
@@ -11,6 +11,7 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class TransferMoneyFormComponent implements OnInit {
   faWallet = faWallet;
+  faEuroSign = faEuroSign;
 
   moneyTransferForm = new FormGroup({
     toAccount: new FormControl('', Validators.required),

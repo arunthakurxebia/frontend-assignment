@@ -4,7 +4,7 @@
         <div class="transfer-money-content">
             <div class="mb4">
                 <label class="pt-label">From Account</label>
-                <input type="text" disabled class="pt-input" value="My Personal Account: $5826.24" />
+                <input type="text" disabled class="pt-input" value="My Personal Account: &#8364;5826.24" />
             </div>
             <div class="mb4">
                 <label class="pt-label">To Account</label>
@@ -12,7 +12,10 @@
             </div>
             <div class="mb1">
                 <label class="pt-label">Amount</label>
-                <input type="text" required class="pt-input" formControlName="amount" placeholder="specify the amount" value="" OnlyNumber />
+                <div class="pt-inp-icon-group">
+                    <span class="pt-inp-icon"><fa-icon [icon]="faEuroSign"></fa-icon></span>
+                    <input type="text" required class="pt-input" formControlName="amount" ptAmount placeholder="specify the amount" value="" /> 
+                </div>
             </div>
         </div>
         <div class="transfer-money-footer">

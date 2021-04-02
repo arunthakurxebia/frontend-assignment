@@ -9,6 +9,7 @@ import { TransactionItemComponent } from './transaction-item/transaction-item.co
 import { TransferMoneyFormComponent } from './transfer-money-form/transfer-money-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AmountDirective } from './directives/amount.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LogoComponent,
     SubmitButtonComponent,
     TransactionItemComponent,
-    TransferMoneyFormComponent
+    TransferMoneyFormComponent,
+    AmountDirective
   ],
   imports: [
     BrowserModule,
