@@ -53,6 +53,7 @@ $item-height:50px;
                 .pt-transaction-amount{
                     @include item;
                     width: 14%;
+                    line-height: $item-height;
                     &.red-txt{
                         color: $danger-red;
                     }

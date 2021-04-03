@@ -18,17 +18,16 @@ export class TransactionListComponent implements OnInit {
   constructor(private dataService : GetTransactionsService) { }
 
   ngOnInit() {
-    this.subscription.add(
-      this.dataService.getTransacionsList().subscribe(res => {
-        console.log(res);
-        this.transactions = res.sort((a:any, b:any) => +new Date(a.dates.valueDate) - +new Date(b.dates.valueDate))
-      },
-      err => {
-        console.log(err);
-      })
-    )
-      this.dataService.getTransacionsList();
-      console.log(this.dataService.getTransacionsList());
+    // this.subscription.add(
+    //   this.dataService.getTransacionsList().subscribe(res => {
+    //     console.log(res);
+    //     this.transactions = res.sort((a:any, b:any) => +new Date(a.dates.valueDate) - +new Date(b.dates.valueDate))
+    //   },
+    //   err => {
+    //     console.log(err);
+    //   })
+    // )
+    this.transactions = this.dataService.getTransacionsList().sort((a:any, b:any) => +new Date(a.dates.valueDate) - +new Date(b.dates.valueDate))
   }
 
 }

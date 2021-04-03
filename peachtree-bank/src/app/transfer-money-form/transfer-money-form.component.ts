@@ -3,6 +3,7 @@ import { faEuroSign, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core';
 import { UtilService } from '../services/util.service';
+import { GetTransactionsService } from '../services/get-transactions.service';
 
 @Component({
   selector: 'app-transfer-money-form',
@@ -23,7 +24,7 @@ export class TransferMoneyFormComponent implements OnInit {
   get moneyTransferFormControl() {
     return this.moneyTransferForm.controls;
   }
-  constructor(private formBuilder: FormBuilder, private util: UtilService) { }
+  constructor(private formBuilder: FormBuilder, private util: UtilService, private dataService : GetTransactionsService) { }
 
   ngOnInit() {
     this.moneyTransferForm = this.formBuilder.group({
@@ -47,6 +48,7 @@ export class TransferMoneyFormComponent implements OnInit {
   }
   
   confirm($event:any){
+    this.dataService.updateTransactionList({amount:this.moneyTransferFormControl.amount.value, name: this.moneyTransferFormControl.toAccount.value});
     this.moneyTransferForm.reset();
     this.moneyTransferForm.get('toAccount').clearValidators();
     this.moneyTransferForm.get('toAccount').updateValueAndValidity();
