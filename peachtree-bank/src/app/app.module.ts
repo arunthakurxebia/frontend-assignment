@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AmountDirective } from './directives/amount.directive';
 import { ReviewModalComponent } from './review-modal/review-modal.component';
+import { TransactionListComponent } from './transaction-list/transaction-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReviewModalComponent } from './review-modal/review-modal.component';
     TransactionItemComponent,
     TransferMoneyFormComponent,
     AmountDirective,
-    ReviewModalComponent
+    ReviewModalComponent,
+    TransactionListComponent
   ],
   imports: [
     BrowserModule,

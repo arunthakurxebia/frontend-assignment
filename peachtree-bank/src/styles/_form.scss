@@ -14,7 +14,7 @@
         padding: $small-spacing;
         border-radius: 4px;
         width: 100%;
-        border: 1px solid $dark-2;
+        border: 1px solid $dark-5;
         &:focus{
             outline: none;
         }
@@ -36,7 +36,7 @@
         &.light{
             color: $dark-1;
             background-color: $light-1;
-            border: 1px solid $dark-2;
+            border: 1px solid $dark-5;
         }
     }
     .pt-inp-icon-group{
@@ -48,7 +48,8 @@
             border-radius: 4px 0 0 4px;
             text-align: center;
             line-height: 30px;
-            border: 1px solid $dark-2;
+            border: 1px solid $dark-5;
+            color: $dark-2;
             &.hasError{
                 border-right-color: $danger-red;
             }

@@ -51,6 +51,25 @@
             min-height: calc(100vh - 90px);
             padding: 0 50px;
         }
+        .pt-list-container{
+            float: left;
+            @include sm{
+                width: 100%;
+            }
+            @include md{
+                width: 69%;
+                margin-left: 1%;
+            }
+        }
+        .pt-form-container{
+            float: left;
+            @include sm{
+                width: 100%;
+            }
+            @include md{
+                width: 30%;
+            }
+        }
     }
     .pt-footer-container{
         position: absolute;

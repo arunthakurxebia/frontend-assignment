@@ -1,0 +1,15 @@
+@import '../../styles/main.scss';
+.pt-transaction-list-container{
+    margin-top: 50px;
+    .pt-transaction-list-header{
+        @include headerStyle;
+    }
+    .pt-transaction-list-body{
+        @include bodyStyle;
+        border-radius: 0 0 2px 2px;
+        .search-input{
+            width: 200px;
+            max-width: 100%;
+        }
+    }
+}

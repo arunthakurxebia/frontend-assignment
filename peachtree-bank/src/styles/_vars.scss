@@ -8,9 +8,10 @@ $large-spacing: 20px;
 $primary-blue: #00a1e0;
 $light-1: #ffffff;
 $dark-1: #000000;
-$dark-2: #333;
+$dark-2: #666;
 $dark-3: #ff5e00;
 $dark-4: #ccc;
+$dark-5: #999;
 $dark-1-opacity:rgba(0,0,0,0.4);
 $danger-red: #ff0000;
 
@@ -92,3 +93,15 @@ $phone:320px;
     }
   }
   @include font-weight-classes;
+
+@mixin headerStyle {
+    padding: $medium-spacing;
+    background-color: $primary-blue;
+    color: $light-1;
+    border-radius: 8px 8px 0 0; 
+}
+
+@mixin bodyStyle {
+    background-color: $light-1;
+    padding: $medium-spacing;
+}

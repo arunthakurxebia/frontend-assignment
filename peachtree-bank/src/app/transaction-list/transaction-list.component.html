@@ -1,0 +1,14 @@
+<div class="pt-transaction-list-container">
+    <div class="pt-transaction-list-header"><h3 class="fw2 mt1 mb1"><fa-icon [icon]="faList" class="mr2"></fa-icon> Transaction <strong>List</strong></h3></div>
+    <div class="pt-transaction-list-body">
+        <form class="pt-form">
+            <div class="pt-inp-icon-group search-input">
+                <span class="pt-inp-icon"><fa-icon [icon]="faSearch"></fa-icon></span>
+                <input type="text" class="pt-input" placeholder="filter transaction" value="" />
+            </div>
+            <div class="pt-transaction-list">
+                <app-transaction-item></app-transaction-item>
+            </div>
+        </form>
+    </div>
+</div>
