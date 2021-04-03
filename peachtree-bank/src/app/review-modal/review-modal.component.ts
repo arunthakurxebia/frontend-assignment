@@ -1,4 +1,14 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'app-review-modal',
@@ -7,12 +17,12 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ReviewModalComponent implements OnInit {
-  showModal:boolean;
-  @Input() show:boolean;
-  @Input() amount:any;
-  @Output() isOpen:EventEmitter<any> = new EventEmitter<any>();
-  @Output() confirm:EventEmitter<any> = new EventEmitter<any>();
+export class ReviewModalComponent implements OnInit, OnChanges {
+  showModal: boolean;
+  @Input() show: boolean;
+  @Input() amount: any;
+  @Output() isOpen: EventEmitter<any> = new EventEmitter<any>();
+  @Output() confirm: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
@@ -22,12 +32,12 @@ export class ReviewModalComponent implements OnInit {
     this.showModal = this.show;
   }
 
-  submitForm(e: any){
+  submitForm(e: any) {
     this.confirm.emit(e);
     this.showModal = false;
   }
 
-  close(){
+  close() {
     this.showModal = false;
     this.isOpen.emit(false);
   }

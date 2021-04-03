@@ -18,7 +18,7 @@
                 <label class="pt-label">Amount</label>
                 <div class="pt-inp-icon-group">
                     <span class="pt-inp-icon" [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']"><fa-icon [icon]="faEuroSign"></fa-icon></span>
-                    <input type="text" required [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)   ? 'hasError' : '']" class="pt-input" tabindex="1" formControlName="amount" ptAmount placeholder="Specify the amount" value="" />
+                    <input type="text" required [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)   ? 'hasError' : '']" class="pt-input" tabindex="1" formControlName="amount" appAmount placeholder="Specify the amount" value="" />
                     <div class="text-danger mt2"
                                 *ngIf="(submitted && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator)">
                                 This field is required

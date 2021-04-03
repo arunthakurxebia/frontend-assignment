@@ -8,13 +8,12 @@ export class UtilService {
 
   constructor() { }
 
-  amountValidator(val : string) : ValidatorFn{
-    console.log(val);
+  amountValidator(val: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      if(parseFloat(val) < parseFloat(control.value)){
-        return { 'amountValidator': true, 'requiredValue': val }
+      if (parseFloat(val) < parseFloat(control.value)) {
+        return { amountValidator: true, requiredValue: val };
       }
       return null;
-    }
+    };
   }
 }

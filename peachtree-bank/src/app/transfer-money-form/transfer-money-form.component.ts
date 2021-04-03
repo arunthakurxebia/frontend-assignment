@@ -14,41 +14,44 @@ import { GetTransactionsService } from '../services/get-transactions.service';
 export class TransferMoneyFormComponent implements OnInit {
   faWallet = faWallet;
   faEuroSign = faEuroSign;
-  showModal:boolean;
-  amount:any;
-  myBalance:any = '5824.76';
+  showModal: boolean;
+  amount: any;
+  myBalance: any = '5824.76';
   submitted = false;
-  moneyTransferForm: FormGroup
-  insuffBal:any = false;
+  moneyTransferForm: FormGroup;
+  insuffBal: any = false;
 
   get moneyTransferFormControl() {
     return this.moneyTransferForm.controls;
   }
-  constructor(private formBuilder: FormBuilder, private util: UtilService, private dataService : GetTransactionsService) { }
+  constructor(private formBuilder: FormBuilder, private util: UtilService, private dataService: GetTransactionsService) { }
 
   ngOnInit() {
     this.moneyTransferForm = this.formBuilder.group({
       toAccount: new FormControl('', Validators.required),
       amount: new FormControl('', [Validators.required, this.util.amountValidator(this.myBalance)])
-    })
+    });
   }
 
-  submitForm(e: any){
+  submitForm(e: any) {
     this.amount = parseFloat(this.moneyTransferFormControl.amount.value).toFixed(2);
     this.submitted = true;
     if (this.moneyTransferForm.invalid) {
       return;
-    }else{
+    } else {
       this.showModal = true;
     }
   }
 
-  isOpen($event :any){
+  isOpen($event: any) {
     this.showModal = false;
   }
-  
-  confirm($event:any){
-    this.dataService.updateTransactionList({amount:this.moneyTransferFormControl.amount.value, name: this.moneyTransferFormControl.toAccount.value});
+
+  confirm($event: any) {
+    this.dataService.updateTransactionList({
+      amount: this.moneyTransferFormControl.amount.value,
+      name: this.moneyTransferFormControl.toAccount.value
+    });
     this.myBalance = parseFloat(this.myBalance) - parseFloat(this.moneyTransferFormControl.amount.value);
     this.moneyTransferForm.reset();
     this.moneyTransferForm.get('toAccount').clearValidators();
