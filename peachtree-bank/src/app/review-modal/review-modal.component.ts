@@ -12,6 +12,7 @@ export class ReviewModalComponent implements OnInit {
   @Input() show:boolean;
   @Input() amount:any;
   @Output() isOpen:EventEmitter<any> = new EventEmitter<any>();
+  @Output() confirm:EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +23,7 @@ export class ReviewModalComponent implements OnInit {
   }
 
   submitForm(e: any){
+    this.confirm.emit(e);
     this.showModal = false;
   }
 

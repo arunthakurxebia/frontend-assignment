@@ -21,6 +21,9 @@
         &:disabled{
             background-color: $dark-4;
         }
+        &.hasError{
+            border-color: $danger-red;
+        }
     }
     .pt-button button, button.pt-button{
         height: 30px;
@@ -46,6 +49,9 @@
             text-align: center;
             line-height: 30px;
             border: 1px solid $dark-2;
+            &.hasError{
+                border-right-color: $danger-red;
+            }
         }
         .pt-inp-icon+.pt-input{
             padding-left: 35px;

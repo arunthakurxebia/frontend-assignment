@@ -8,21 +8,24 @@
             </div>
             <div class="mb4">
                 <label class="pt-label">To Account</label>
-                <input type="text" required class="pt-input" autofocus tabindex="0" formControlName="toAccount" value="" placeholder="type an account name" />
-                <span class="text-danger"
-                                *ngIf="(moneyTransferFormControl.toAccount.touched || submitted) && moneyTransferFormControl.toAccount.errors?.required">
+                <input type="text" required class="pt-input" [ngClass]="[(submitted && moneyTransferFormControl.toAccount.errors) ? 'hasError' : '']" autofocus tabindex="0" formControlName="toAccount" value="" placeholder="Type an account name" />
+                <div class="text-danger mt2"
+                                *ngIf="submitted && moneyTransferFormControl.toAccount.errors">
                                 This field is required
-                            </span>
+            </div>
             </div>
             <div class="mb1">
                 <label class="pt-label">Amount</label>
                 <div class="pt-inp-icon-group">
-                    <span class="pt-inp-icon"><fa-icon [icon]="faEuroSign"></fa-icon></span>
-                    <input type="text" required class="pt-input" tabindex="1" formControlName="amount" ptAmount placeholder="specify the amount" value="" />
-                    <span class="text-danger"
-                                *ngIf="((moneyTransferFormControl.toAccount.touched || submitted) && moneyTransferFormControl.toAccount.errors?.required)">
+                    <span class="pt-inp-icon" [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']"><fa-icon [icon]="faEuroSign"></fa-icon></span>
+                    <input type="text" required [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)   ? 'hasError' : '']" class="pt-input" tabindex="1" formControlName="amount" ptAmount placeholder="Specify the amount" value="" />
+                    <div class="text-danger mt2"
+                                *ngIf="(submitted && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator)">
                                 This field is required
-                            </span> 
+                    </div>
+                    <div class="text-danger mt2" *ngIf="(submitted && moneyTransferFormControl.amount.errors && moneyTransferFormControl.amount.errors.amountValidator)">
+                            There is not enough balance
+                    </div> 
                 </div>
             </div>
         </div>
@@ -30,6 +33,6 @@
             <app-submit-button class="pt-button dark"></app-submit-button>
         </div>
     </form>
-    <app-review-modal [show]="showModal" [amount]="amount" (isOpen)="isOpen($event)"></app-review-modal>
+    <app-review-modal [show]="showModal" [amount]="amount" (isOpen)="isOpen($event)" (confirm)="confirm($event)"></app-review-modal>
 </div>
 

@@ -14,6 +14,7 @@
         background-color: $light-1;
         margin: auto;
         padding: 0;
+        border-radius: 8px;
         border: 1px solid $dark-2;
         box-shadow: 0 4px 8px 0 $dark-1-opacity,0 6px 20px 0 $dark-1-opacity;
         -webkit-animation-name: animatetop;
@@ -31,6 +32,7 @@
         }
         .modal-header {
             padding: 2px 16px;
+            border-radius: 8px 8px 0 0;
             background-color: $light-1;
             color: $dark-1;
             border-bottom: 1px solid $dark-4;
@@ -55,9 +57,7 @@
             color: $dark-1;
             border-top: 1px solid $dark-4;
             text-align: right;
-            button{
-
-            }
+            border-radius: 0 0 8px 8px;
         }
       }
       

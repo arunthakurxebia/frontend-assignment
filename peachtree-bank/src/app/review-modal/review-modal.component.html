@@ -11,10 +11,10 @@
         <p class="fw6">It will be send to account</p>
         <p>Backbase</p>
         <p class="fw6">With the amount of:</p>
-        <p>&#8364;{{amount}}</p>
+        <p>&#8364; {{amount}}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="mr4 pt-button light" (click)="close();">Close</button><app-submit-button class="pt-button dark"></app-submit-button>
+        <button type="button" class="mr4 pt-button light" (click)="close();">Close</button><app-submit-button class="pt-button dark" (submitForm)="submitForm($event)"></app-submit-button>
       </div>
     </div>
   
