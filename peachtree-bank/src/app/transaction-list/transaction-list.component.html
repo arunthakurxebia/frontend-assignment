@@ -4,10 +4,10 @@
         <form class="pt-form">
             <div class="pt-inp-icon-group search-input">
                 <span class="pt-inp-icon"><fa-icon [icon]="faSearch"></fa-icon></span>
-                <input type="text" class="pt-input" placeholder="filter transaction" value="" />
+                <input type="text" class="pt-input" name="marchentName" [(ngModel)]="marchentName" placeholder="filter transaction" value="" />
             </div>
             <div class="pt-transaction-list mt2">
-                <app-transaction-item class="pt-transaction-list-item" *ngFor="let item of transactions">
+                <app-transaction-item class="pt-transaction-list-item" *ngFor="let item of transactions | filterBy: marchentName">
                     <div data-test-hook='transactionColour' class="pt-transaction-colour" 
                     [ngClass]="
                     {

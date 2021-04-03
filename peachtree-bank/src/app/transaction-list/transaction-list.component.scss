@@ -26,10 +26,8 @@ $item-height:50px;
             .pt-transaction-list-item{
                 width: 100%;
                 float: left;
-                &:not(:last-child){
-                    padding: $medium-spacing 0;
-                    border-bottom: 1px solid $dark-4;
-                }
+                padding: $medium-spacing 0;
+                border-bottom: 1px solid $dark-4;
                 .pt-transaction-colour{
                     @include item;
                     width: 1%;

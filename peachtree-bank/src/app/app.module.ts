@@ -14,6 +14,7 @@ import { ReviewModalComponent } from './review-modal/review-modal.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PtDatePipe } from './pipe/pt-date.pipe';
+import { FilterByPipe } from './pipe/filter-by.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PtDatePipe } from './pipe/pt-date.pipe';
     AmountDirective,
     ReviewModalComponent,
     TransactionListComponent,
-    PtDatePipe
+    PtDatePipe,
+    FilterByPipe
   ],
   imports: [
     BrowserModule,
