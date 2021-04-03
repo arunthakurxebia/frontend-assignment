@@ -49,6 +49,7 @@ export class TransferMoneyFormComponent implements OnInit {
   
   confirm($event:any){
     this.dataService.updateTransactionList({amount:this.moneyTransferFormControl.amount.value, name: this.moneyTransferFormControl.toAccount.value});
+    this.myBalance = parseFloat(this.myBalance) - parseFloat(this.moneyTransferFormControl.amount.value);
     this.moneyTransferForm.reset();
     this.moneyTransferForm.get('toAccount').clearValidators();
     this.moneyTransferForm.get('toAccount').updateValueAndValidity();
