@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AmountDirective } from './directives/amount.directive';
 import { ReviewModalComponent } from './review-modal/review-modal.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TransactionListComponent } from './transaction-list/transaction-list.co
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
