@@ -1,4 +1,9 @@
 @import '../../styles/main.scss';
+$item-height:50px;
+@mixin item {
+    height: $item-height;
+    float: left;
+}
 .pt-transaction-list-container{
     margin-top: 50px;
     .pt-transaction-list-header{
@@ -10,6 +15,54 @@
         .search-input{
             width: 200px;
             max-width: 100%;
+        }
+        .pt-transaction-list{
+            height: 340px;
+            display: block;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: calc(100vh - 200px);
+            .pt-transaction-list-item{
+                width: 100%;
+                float: left;
+                &:not(:last-child){
+                    padding: $medium-spacing 0;
+                    border-bottom: 1px solid $dark-4;
+                }
+                .pt-transaction-colour{
+                    @include item;
+                    width: 1%;
+                    &.DBIT{
+                        background-color: $danger-red;
+                    }
+                    &.CRDT{
+                        background-color: $success-green;
+                    }
+                }
+                .pt-transaction-date{
+                    vertical-align: middle;
+                    line-height: $item-height;
+                    padding-left: $small-spacing;
+                    width: 15%;
+                    @include item;
+                }
+                .merchant-details{
+                    @include item;
+                    padding-top: 5px;
+                    width: 70%;
+                }
+                .pt-transaction-amount{
+                    @include item;
+                    width: 14%;
+                    &.red-txt{
+                        color: $danger-red;
+                    }
+                    &.green-txt{
+                        color: $success-green;
+                    }
+                }
+            }
         }
     }
 }

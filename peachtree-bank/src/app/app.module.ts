@@ -13,6 +13,7 @@ import { AmountDirective } from './directives/amount.directive';
 import { ReviewModalComponent } from './review-modal/review-modal.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PtDatePipe } from './pipe/pt-date.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     TransferMoneyFormComponent,
     AmountDirective,
     ReviewModalComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    PtDatePipe
   ],
   imports: [
     BrowserModule,
