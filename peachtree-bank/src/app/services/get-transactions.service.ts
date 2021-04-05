@@ -6,17 +6,19 @@ import transactions from '../../dev/transactions.json';
   providedIn: 'root'
 })
 export class GetTransactionsService {
+  list = transactions.data;
   constructor() { }
 
   getTransacionsList() {
-    return transactions.data;
+    return this.list;
   }
 
   updateTransactionList(item: any) {
-    transactions.data.push({
-      id: Math.random(),
+    let data = {
+      categoryCode:"",
       merchant: {
-        name: item.name
+        name: item.name,
+        accountNumber:"0000"
       },
       dates: {
         valueDate: new Date()
@@ -29,6 +31,8 @@ export class GetTransactionsService {
           amount: item.amount
         }
       }
-    });
+    };
+    console.log(this.list);
+    this.list.push(data);
   }
 }
