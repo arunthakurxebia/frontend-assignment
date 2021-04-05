@@ -10,7 +10,7 @@ export class UtilService {
 
   amountValidator(val: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      if (parseFloat(val) < parseFloat(control.value)) {
+      if ((parseFloat(val) + 500) < parseFloat(control.value)) {
         return { amountValidator: true, requiredValue: val };
       }
       return null;

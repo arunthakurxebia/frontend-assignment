@@ -58,6 +58,5 @@ export class TransferMoneyFormComponent implements OnInit {
     this.moneyTransferForm.get('toAccount').updateValueAndValidity();
     this.moneyTransferForm.get('amount').clearValidators();
     this.moneyTransferForm.get('amount').updateValueAndValidity();
-    console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.moneyTransferForm.value));
   }
 }

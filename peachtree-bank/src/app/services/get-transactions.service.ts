@@ -14,11 +14,11 @@ export class GetTransactionsService {
   }
 
   updateTransactionList(item: any) {
-    let data = {
-      categoryCode:"",
+    const data = {
+      categoryCode: '',
       merchant: {
         name: item.name,
-        accountNumber:"0000"
+        accountNumber: '0000'
       },
       dates: {
         valueDate: new Date()
@@ -32,7 +32,6 @@ export class GetTransactionsService {
         }
       }
     };
-    console.log(this.list);
     this.list.push(data);
   }
 }
