@@ -22,7 +22,7 @@
                     {
                         'red-txt' : item.transaction.creditDebitIndicator == 'DBIT',
                         'green-txt' : item.transaction.creditDebitIndicator === 'CRDT'
-                    }"><fa-icon [icon]="faEuroSign"></fa-icon> {{item.transaction.amountCurrency.amount}}</div>
+                    }"><fa-icon [icon]="faEuroSign"></fa-icon> {{item.transaction.creditDebitIndicator == 'DBIT' ? '-' : ''}}{{item.transaction.amountCurrency.amount}}</div>
                 </app-transaction-item>
             </div>
         </form>

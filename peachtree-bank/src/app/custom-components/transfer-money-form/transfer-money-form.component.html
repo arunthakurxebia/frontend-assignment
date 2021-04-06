@@ -1,31 +1,44 @@
 <div class="transfer-money-container">
     <form class="transfer-money-form pt-form" [formGroup]="moneyTransferForm" (ngSubmit)="submitForm()">
-        <div class="transfer-money-header"><h3 class="fw2 mt1 mb1"><fa-icon [icon]="faWallet" class="mr2"></fa-icon> <strong>Make</strong> Transfer</h3></div>
+        <div class="transfer-money-header">
+            <h3 class="fw2 mt1 mb1">
+                <fa-icon [icon]="faWallet" class="mr2"></fa-icon> <strong>Make</strong> Transfer
+            </h3>
+        </div>
         <div class="transfer-money-content">
             <div class="mb4">
                 <label class="pt-label">From Account</label>
-                <input type="text" aria-describedby="fromAccount" disabled class="pt-input" value="My Personal Account: &#8364; {{myBalance}}" />
+                <input type="text" aria-describedby="fromAccount" disabled class="pt-input"
+                    value="My Personal Account: &#8364; {{myBalance}}" />
             </div>
             <div class="mb4">
                 <label class="pt-label">To Account</label>
-                <input type="text" required class="pt-input" aria-describedby="toAccount" [ngClass]="[(submitted && moneyTransferFormControl.toAccount.errors) ? 'hasError' : '']" autofocus tabindex="0" formControlName="toAccount" value="" placeholder="Type an account name" />
-                <div class="text-danger mt2"
-                                *ngIf="submitted && moneyTransferFormControl.toAccount.errors">
-                                This field is required
-            </div>
+                <input type="text" required class="pt-input" aria-describedby="toAccount"
+                    [ngClass]="[(moneyTransferFormControl.toAccount.dirty && moneyTransferFormControl.toAccount.errors) ? 'hasError' : '']" autofocus
+                    tabindex="0" formControlName="toAccount" value="" placeholder="Type an account name" />
+                <div class="text-danger mt2" *ngIf="submitted && moneyTransferFormControl.toAccount.errors">
+                    This field is required
+                </div>
             </div>
             <div class="mb1">
                 <label class="pt-label">Amount</label>
                 <div class="pt-inp-icon-group">
-                    <span class="pt-inp-icon" [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']"><fa-icon [icon]="faEuroSign"></fa-icon></span>
-                    <input type="text" required aria-describedby="transactionAmount" [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)   ? 'hasError' : '']" class="pt-input" tabindex="1" formControlName="amount" appAmount placeholder="Specify the amount" value="" />
+                    <span class="pt-inp-icon"
+                        [ngClass]="[(moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']">
+                        <fa-icon [icon]="faEuroSign"></fa-icon>
+                    </span>
+                    <input type="text" required aria-describedby="transactionAmount"
+                        [ngClass]="[(moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']"
+                        class="pt-input" tabindex="1" formControlName="amount" appAmount
+                        placeholder="Specify the amount" value="" />
                     <div class="text-danger mt2"
-                                *ngIf="(submitted && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator)">
-                                This field is required
+                        *ngIf="(moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator)">
+                        This field is required
                     </div>
-                    <div class="text-danger mt2" *ngIf="(submitted && moneyTransferFormControl.amount.errors && moneyTransferFormControl.amount.errors.amountValidator)">
-                            There is not enough balance
-                    </div> 
+                    <div class="text-danger mt2"
+                        *ngIf="(moneyTransferFormControl.amount.errors && moneyTransferFormControl.amount.errors.amountValidator)">
+                        There is not enough balance
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,6 +46,6 @@
             <app-submit-button class="pt-button dark"></app-submit-button>
         </div>
     </form>
-    <app-review-modal [show]="showModal" [amount]="amount" (isOpen)="isOpen($event)" (confirm)="confirm($event)"></app-review-modal>
+    <app-review-modal [show]="showModal" [amount]="amount" (isOpen)="isOpen($event)" (confirm)="confirm($event)">
+    </app-review-modal>
 </div>
-
