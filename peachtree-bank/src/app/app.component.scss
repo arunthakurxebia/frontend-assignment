@@ -36,7 +36,7 @@
         }
     }
     .pt-main-container{
-        background-image: url('#{$bg-img}');
+        background-image: url('#{$img-path}background.jpg');
         background-repeat: repeat-x;
         background-size: cover;
         position: relative;
