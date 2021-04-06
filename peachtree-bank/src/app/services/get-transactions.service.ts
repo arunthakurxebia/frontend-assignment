@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 
 import transactions from '../../dev/transactions.json';
 
@@ -6,15 +8,34 @@ import transactions from '../../dev/transactions.json';
   providedIn: 'root'
 })
 export class GetTransactionsService {
-  list = transactions.data;
-  constructor() { }
+  private apiHost = '/dev/transactions';
 
-  getTransacionsList() {
-    return this.list;
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
+  private subscription = new Subscription();
+
+  private dataSource = new BehaviorSubject<any[]>([]);
+
+  transactions = this.dataSource.asObservable();
+
+  constructor(private http: HttpClient) {
+    this.subscription.add(
+      this.getTransacionsList().subscribe(res => {
+        this.dataSource.next(res);
+      },
+      err => {
+        console.log(err);
+      })
+    )
+  }
+
+  public getTransacionsList():Observable<any> {
+    return this.http.get<any[]>(`${this.apiHost}`, this.httpOptions);
   }
 
   updateTransactionList(item: any) {
-    const data = {
+    const dataPayload = {
       categoryCode: '',
       merchant: {
         name: item.name,
@@ -32,6 +53,6 @@ export class GetTransactionsService {
         }
       }
     };
-    this.list.push(data);
+    this.dataSource.next(this.dataSource.getValue().concat([dataPayload]));
   }
 }
