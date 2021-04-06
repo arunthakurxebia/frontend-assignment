@@ -10,12 +10,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AmountDirective } from './directives/amount.directive';
 import { ReviewModalComponent } from './custom-components/review-modal/review-modal.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PtDatePipe } from './pipe/pt-date.pipe';
 import { FilterByPipe } from './pipe/filter-by.pipe';
 import { FilterComponent } from './filter/filter.component';
 import { TransferMoneyFormComponent } from './custom-components/transfer-money-form/transfer-money-form.component';
 import { TransactionListComponent } from './custom-components/transaction-list/transaction-list.component';
+import { LoaderComponent } from './custom-components/loader/loader.component';
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { TransactionListComponent } from './custom-components/transaction-list/t
     ReviewModalComponent,
     TransactionListComponent,
     PtDatePipe,
-    FilterByPipe
+    FilterByPipe,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { TransactionListComponent } from './custom-components/transaction-list/t
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

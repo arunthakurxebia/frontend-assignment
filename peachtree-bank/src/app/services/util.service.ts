@@ -6,6 +6,8 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 })
 export class UtilService {
 
+  private _loading: boolean = false;
+
   constructor() { }
 
   amountValidator(val: string): ValidatorFn {
@@ -15,5 +17,17 @@ export class UtilService {
       }
       return null;
     };
+  }
+
+  getloading(): boolean {
+      return this._loading;
+  }
+
+  onRequestStarted(): void {
+      this._loading = true;
+  }
+
+  onRequestFinished(): void {
+      this._loading = false;
   }
 }

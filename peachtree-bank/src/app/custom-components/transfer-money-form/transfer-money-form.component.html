@@ -46,6 +46,6 @@
             <app-submit-button class="pt-button dark"></app-submit-button>
         </div>
     </form>
-    <app-review-modal [show]="showModal" [amount]="amount" (isOpen)="isOpen($event)" (confirm)="confirm($event)">
+    <app-review-modal [show]="showModal" [amount]="amount" [toAccount]="moneyTransferFormControl.toAccount.value" (isOpen)="isOpen($event)" (confirm)="confirm($event)">
     </app-review-modal>
 </div>

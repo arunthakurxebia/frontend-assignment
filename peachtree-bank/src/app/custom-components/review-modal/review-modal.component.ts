@@ -21,6 +21,7 @@ export class ReviewModalComponent implements OnInit, OnChanges {
   showModal: boolean;
   @Input() show: boolean;
   @Input() amount: any;
+  @Input() toAccount: any;
   @Output() isOpen: EventEmitter<any> = new EventEmitter<any>();
   @Output() confirm: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }

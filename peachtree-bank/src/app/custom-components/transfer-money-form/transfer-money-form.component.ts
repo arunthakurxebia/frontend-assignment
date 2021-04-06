@@ -53,6 +53,7 @@ export class TransferMoneyFormComponent implements OnInit {
       name: this.moneyTransferFormControl.toAccount.value
     });
     this.myBalance = parseFloat(this.myBalance) - parseFloat(this.moneyTransferFormControl.amount.value);
+    this.showModal = false;
     this.moneyTransferForm.reset();
     this.moneyTransferForm.get('toAccount').clearValidators();
     this.moneyTransferForm.get('toAccount').updateValueAndValidity();
