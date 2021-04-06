@@ -52,7 +52,7 @@ export class LoaderInterceptorService {
       return () => {
         next.handle(req)
         .pipe(
-        delay(500),
+        delay(1000),
         finalize(() => {
           this.removeRequest(req);
           subscription.unsubscribe();

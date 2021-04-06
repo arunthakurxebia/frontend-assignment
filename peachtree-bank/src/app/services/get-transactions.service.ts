@@ -1,12 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetTransactionsService {
-  private apiHost = '/dev/';
+  private apiHost = 'assets/transactions.json';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,7 +20,7 @@ export class GetTransactionsService {
   constructor(private http: HttpClient) {
     this.subscription.add(
       this.getTransacionsList().subscribe(res => {
-        this.dataSource.next(res);
+          this.dataSource.next(res.data);
       },
       err => {
         console.log(err);
@@ -29,7 +29,7 @@ export class GetTransactionsService {
   }
 
   public getTransacionsList():Observable<any> {
-    return this.http.get<any[]>(`${this.apiHost}transactions`, this.httpOptions);
+    return this.http.get<any[]>(`${this.apiHost}`);
   }
 
   updateTransactionList(item: any) {

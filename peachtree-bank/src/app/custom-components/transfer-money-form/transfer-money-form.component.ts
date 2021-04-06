@@ -33,7 +33,7 @@ export class TransferMoneyFormComponent implements OnInit {
     });
   }
 
-  submitForm(e: any) {
+  submitForm() {
     this.amount = parseFloat(this.moneyTransferFormControl.amount.value).toFixed(2);
     this.submitted = true;
     if (this.moneyTransferForm.invalid) {
