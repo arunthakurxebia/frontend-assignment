@@ -13,11 +13,16 @@ export class TransactionListComponent implements OnInit {
   faSearch = faSearch;
   faEuroSign = faEuroSign;
   transactions: any;
+  marchentName:any = "";
   constructor(private dataService: GetTransactionsService) { }
 
   ngOnInit() {
     this.transactions = this.dataService.getTransacionsList()
       .sort((a: any, b: any) => +new Date(a.dates.valueDate) - +new Date(b.dates.valueDate));
+  }
+
+  inputChange(e:any){
+    this.marchentName = e;
   }
 
 }

@@ -15,6 +15,7 @@ import { TransactionListComponent } from './transaction-list/transaction-list.co
 import { HttpClientModule } from '@angular/common/http';
 import { PtDatePipe } from './pipe/pt-date.pipe';
 import { FilterByPipe } from './pipe/filter-by.pipe';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FilterByPipe } from './pipe/filter-by.pipe';
     FooterComponent,
     LogoComponent,
     SubmitButtonComponent,
+    FilterComponent,
     TransactionItemComponent,
     TransferMoneyFormComponent,
     AmountDirective,

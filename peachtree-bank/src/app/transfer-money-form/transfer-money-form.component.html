@@ -4,11 +4,11 @@
         <div class="transfer-money-content">
             <div class="mb4">
                 <label class="pt-label">From Account</label>
-                <input type="text" disabled class="pt-input" value="My Personal Account: &#8364; {{myBalance}}" />
+                <input type="text" aria-describedby="fromAccount" disabled class="pt-input" value="My Personal Account: &#8364; {{myBalance}}" />
             </div>
             <div class="mb4">
                 <label class="pt-label">To Account</label>
-                <input type="text" required class="pt-input" [ngClass]="[(submitted && moneyTransferFormControl.toAccount.errors) ? 'hasError' : '']" autofocus tabindex="0" formControlName="toAccount" value="" placeholder="Type an account name" />
+                <input type="text" required class="pt-input" aria-describedby="toAccount" [ngClass]="[(submitted && moneyTransferFormControl.toAccount.errors) ? 'hasError' : '']" autofocus tabindex="0" formControlName="toAccount" value="" placeholder="Type an account name" />
                 <div class="text-danger mt2"
                                 *ngIf="submitted && moneyTransferFormControl.toAccount.errors">
                                 This field is required
@@ -18,7 +18,7 @@
                 <label class="pt-label">Amount</label>
                 <div class="pt-inp-icon-group">
                     <span class="pt-inp-icon" [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']"><fa-icon [icon]="faEuroSign"></fa-icon></span>
-                    <input type="text" required [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)   ? 'hasError' : '']" class="pt-input" tabindex="1" formControlName="amount" appAmount placeholder="Specify the amount" value="" />
+                    <input type="text" required aria-describedby="transactionAmount" [ngClass]="[(submitted && moneyTransferFormControl.amount.errors)   ? 'hasError' : '']" class="pt-input" tabindex="1" formControlName="amount" appAmount placeholder="Specify the amount" value="" />
                     <div class="text-danger mt2"
                                 *ngIf="(submitted && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator)">
                                 This field is required
