@@ -9,7 +9,6 @@ $item-height:50px;
     flex-direction: column;
 }
 .pt-transaction-list-container{
-    margin-top: 50px;
     .pt-transaction-list-header{
         @include headerStyle;
     }
