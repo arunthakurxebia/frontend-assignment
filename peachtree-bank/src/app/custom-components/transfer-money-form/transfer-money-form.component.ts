@@ -2,8 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faEuroSign, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core';
-import { UtilService } from '../services/util.service';
-import { GetTransactionsService } from '../services/get-transactions.service';
+import { GetTransactionsService } from 'src/app/services/get-transactions.service';
+import { UtilService } from 'src/app/services/util.service';
 
 @Component({
   selector: 'app-transfer-money-form',

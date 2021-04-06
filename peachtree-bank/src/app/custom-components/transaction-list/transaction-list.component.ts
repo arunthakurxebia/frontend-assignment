@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { faEuroSign, faList, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { GetTransactionsService } from '../services/get-transactions.service';
+import { GetTransactionsService } from 'src/app/services/get-transactions.service';
 
 @Component({
   selector: 'app-transaction-list',
