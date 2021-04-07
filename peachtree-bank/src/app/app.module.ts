@@ -19,6 +19,7 @@ import { TransactionListComponent } from './custom-components/transaction-list/t
 import { LoaderComponent } from './custom-components/loader/loader.component';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
+import { PtCurrencyPipe } from './pipe/pt-currency.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LoaderInterceptorService } from './interceptors/loader-interceptor.serv
     TransactionListComponent,
     PtDatePipe,
     FilterByPipe,
-    LoaderComponent
+    LoaderComponent,
+    PtCurrencyPipe
   ],
   imports: [
     BrowserModule,
