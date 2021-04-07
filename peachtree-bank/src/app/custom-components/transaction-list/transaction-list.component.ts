@@ -18,7 +18,7 @@ export class TransactionListComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.transactions.subscribe(res => {
-      this.transactions = res.sort((a:any, b:any) => +new Date(a.dates.valueDate) - +new Date(b.dates.valueDate));
+      this.transactions = res.sort((a:any, b:any) => +new Date(b.dates.valueDate) - +new Date(a.dates.valueDate));
     },
     err => {
       console.log(err);
