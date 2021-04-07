@@ -6,15 +6,18 @@ $large-spacing: 20px;
 
 // colors
 $primary-blue: #00a1e0;
-$light-1: #ffffff;
-$dark-1: #000000;
-$dark-2: #666;
-$dark-3: #ed773c;;
-$dark-4: #ccc;
-$dark-5: #999;
-$dark-1-opacity:rgba(0,0,0,0.6);
+$white-1: #ffffff;
+$black-1: #000000;
+$grey-1: #666;
+$grey-2: #ccc;
+$grey-3: #999;
+$orange-1: #ed773c;
+$orange-2: #e25a2c;
+$black-1-opacity:rgba(0,0,0,0.6);
 $danger-red: #ff0000;
-$success-green: #00ff00;
+$red-2: #e0505d;
+$pink-1: #d51371;
+$success-green: #58b769;
 
 //font-size
 $regular-font: 14px;
@@ -98,11 +101,11 @@ $phone:320px;
 @mixin headerStyle {
     padding: $medium-spacing;
     background-color: $primary-blue;
-    color: $light-1;
+    color: $white-1;
     border-radius: 8px 8px 0 0; 
 }
 
 @mixin bodyStyle {
-    background-color: $light-1;
+    background-color: $white-1;
     padding: $medium-spacing;
 }

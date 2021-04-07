@@ -6,11 +6,8 @@
             <div class="pt-transaction-list mt2">
                 <app-transaction-item class="pt-transaction-list-item" *ngFor="let item of transactions | filterBy: marchentName">
                     <div data-test-hook='transactionColour' class="pt-transaction-colour" 
-                    [ngClass]="
-                    {
-                        'DBIT' : item.transaction.creditDebitIndicator == 'DBIT',
-                        'CRDT' : item.transaction.creditDebitIndicator === 'CRDT'
-                    }"></div>
+                    [ngStyle]="{'background-color':item.categoryCode}"
+                    ></div>
                     <div data-test-hook='transactionDate' class="pt-transaction-date">{{item.dates.valueDate | ptDate}}</div>
                     <div data-test-hook='transactionMerchantName' class="pt-transaction-merchant-name fw5">{{item.merchant.name}}</div>
                     <div data-test-hook='transactionType' class="pt-transaction-type">{{item.transaction.type}}</div>
@@ -18,7 +15,7 @@
                     {
                         'red-txt' : item.transaction.creditDebitIndicator == 'DBIT',
                         'green-txt' : item.transaction.creditDebitIndicator === 'CRDT'
-                    }"><fa-icon [icon]="faEuroSign"></fa-icon> {{item.transaction.creditDebitIndicator == 'DBIT' ? '-' : ''}}{{item.transaction.amountCurrency.amount}}</div>
+                    }"><fa-icon [icon]="faEuroSign"></fa-icon> {{item.transaction.creditDebitIndicator == 'DBIT' ? '-' : ''}}{{item.transaction.amountCurrency.amount | number : '1.2-2'}}</div>
                 </app-transaction-item>
             </div>
         </form>

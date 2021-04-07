@@ -3,7 +3,7 @@
     position:fixed;
     width:100%;
     left:0;right:0;top:0;bottom:0;
-    background-color: $dark-1-opacity;
+    background-color: $black-1-opacity;
     z-index:9999;
     &::after {
         content:'';
@@ -12,7 +12,7 @@
         left:48%;top:40%;
         width:40px;height:40px;
         border-style:solid;
-        border-color:$dark-3;
+        border-color:$orange-1;
         border-top-color:transparent;
         border-width: 4px;
         border-radius:50%;
