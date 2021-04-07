@@ -14,5 +14,6 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "exclude": ["src/**/filter.component.spec.ts"]
 }

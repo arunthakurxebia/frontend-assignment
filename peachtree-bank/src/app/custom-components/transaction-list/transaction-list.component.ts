@@ -13,7 +13,7 @@ export class TransactionListComponent implements OnInit {
   faSearch = faSearch;
   faEuroSign = faEuroSign;
   transactions: any;
-  marchentName: any = '';
+  marchentName: string = '';
   constructor(private dataService: GetTransactionsService) { }
 
   ngOnInit() {

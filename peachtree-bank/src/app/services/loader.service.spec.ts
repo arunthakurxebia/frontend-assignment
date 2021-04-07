@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-
 import { LoaderService } from './loader.service';
 
 describe('LoaderService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: LoaderService;
 
-  it('should be created', () => {
-    const service: LoaderService = TestBed.get(LoaderService);
+  beforeEach(() => {
+    TestBed.configureTestingModule({ providers: [LoaderService] });
+    service = TestBed.get(LoaderService);
+  });
+
+  it('can load instance', () => {
     expect(service).toBeTruthy();
   });
 });

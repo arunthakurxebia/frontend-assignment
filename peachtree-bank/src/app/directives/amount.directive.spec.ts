@@ -1,10 +1,42 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { ElementRef } from '@angular/core';
 import { AmountDirective } from './amount.directive';
-let elRefMock = {
-  nativeElement: document.createElement('div')
-};
+
+@Component({
+  template: `
+    <div>Without Directive</div>
+    <div appAmount>Default</div>
+  `
+})
+class TestComponent {}
+
 describe('AmountDirective', () => {
-  it('should create an instance', () => {
-    const directive = new AmountDirective(elRefMock);
-    expect(directive).toBeTruthy();
+  let fixture: ComponentFixture<TestComponent>;
+  let elementsWithDirective: Array<DebugElement>;
+  let bareElement: DebugElement;
+
+  beforeEach(() => {
+    const elementRefStub = () => ({
+      nativeElement: { value: { replace: () => ({}), match: () => ({}) } }
+    });
+    TestBed.configureTestingModule({
+      declarations: [AmountDirective, TestComponent]
+    });
+    fixture = TestBed.createComponent(TestComponent);
+    fixture.detectChanges();
+    elementsWithDirective = fixture.debugElement.queryAll(
+      By.directive(AmountDirective)
+    );
+    bareElement = fixture.debugElement.query(By.css(':not([appAmount])'));
+  });
+
+  it('should have bare element', () => {
+    expect(bareElement).toBeTruthy();
+  });
+
+  it('should have 1 element(s) with directive', () => {
+    expect(elementsWithDirective.length).toBe(1);
   });
 });

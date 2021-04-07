@@ -1,25 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
 import { ReviewModalComponent } from './review-modal.component';
 
 describe('ReviewModalComponent', () => {
   let component: ReviewModalComponent;
   let fixture: ComponentFixture<ReviewModalComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ReviewModalComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ReviewModalComponent]
+    });
     fixture = TestBed.createComponent(ReviewModalComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('can load instance', () => {
     expect(component).toBeTruthy();
   });
 });
