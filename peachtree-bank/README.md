@@ -1,27 +1,30 @@
 # PeachtreeBank
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+A simple application to mock money transfer.
 
-## Development server
+## Assumptions
+Below mentioned points are assumed to develop this application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Mock json file used for the transaction list.
+- Fontawesom icon library is used for icons.
+- Out-of-box components are never manipulated.
+- Year is added in date format to avoid confusion.
+- A global loader is added to show loader on all API call.
 
-## Code scaffolding
+## Setup environment
+Below frameworks and apps must be installed on your local machine to run this application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- #### nodejs
+- #### angular
+- #### browser
+- #### git (if using git clone to download code)
 
-## Build
+Use **download zip** option or use `git clone https://github.com/arunthakurxebia/frontend-assignment.git` on terminal to get the application code on local machine. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Run development server
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Extract the .zip file if downloaded code using **download zip** option, if cloned code using **git clone** go to the next step.
+- Open terminal and navigate the clone repo (frontend-assignment).
+- Navigate to root folder of the application (root folder contains package.json), use `cd peachtree-bank`.
+- Run `npm install` to install all the dependencies.
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
