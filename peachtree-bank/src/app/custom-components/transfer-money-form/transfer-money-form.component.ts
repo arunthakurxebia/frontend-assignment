@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faEuroSign, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core';
@@ -24,7 +24,11 @@ export class TransferMoneyFormComponent implements OnInit {
   get moneyTransferFormControl() {
     return this.moneyTransferForm.controls;
   }
-  constructor(private formBuilder: FormBuilder, private util: UtilService, private dataService: GetTransactionsService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private util: UtilService,
+    private dataService: GetTransactionsService,
+    private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.moneyTransferForm = this.formBuilder.group({
@@ -55,9 +59,6 @@ export class TransferMoneyFormComponent implements OnInit {
     this.myBalance = parseFloat(this.myBalance) - parseFloat(this.moneyTransferFormControl.amount.value);
     this.showModal = false;
     this.moneyTransferForm.reset();
-    this.moneyTransferForm.get('toAccount').clearValidators();
-    this.moneyTransferForm.get('toAccount').updateValueAndValidity();
-    this.moneyTransferForm.get('amount').clearValidators();
-    this.moneyTransferForm.get('amount').updateValueAndValidity();
+    this.cdRef.markForCheck();
   }
 }

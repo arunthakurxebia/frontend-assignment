@@ -16,7 +16,7 @@
                 <input type="text" required class="pt-input" aria-describedby="toAccount" id="toAccount"
                     [ngClass]="[(moneyTransferFormControl.toAccount.dirty && moneyTransferFormControl.toAccount.errors) ? 'hasError' : '']" autofocus
                     tabindex="0" formControlName="toAccount" value="" placeholder="Type an account name" />
-                <div class="text-danger mt2" *ngIf="submitted && moneyTransferFormControl.toAccount.errors">
+                <div class="text-danger mt2" *ngIf="moneyTransferFormControl.toAccount.dirty && moneyTransferFormControl.toAccount.errors">
                     This field is required
                 </div>
             </div>
