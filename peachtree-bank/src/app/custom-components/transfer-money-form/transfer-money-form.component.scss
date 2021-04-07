@@ -1,11 +1,10 @@
 @import '../../../styles/main.scss';
 .transfer-money-container{
     @include sm{
-        margin-left: auto;
-        margin-right: auto;
+        margin:10px auto;
     }
     @include md{
-        margin-left: 0;
+        margin: 0;
         max-width: 300px;
     }
     .transfer-money-form{
