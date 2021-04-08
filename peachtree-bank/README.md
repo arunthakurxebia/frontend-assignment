@@ -30,7 +30,7 @@ Use **download zip** option or use `git clone https://github.com/arunthakurxebia
 - Open terminal and navigate the cloned repo (frontend-assignment).
 - Navigate to root folder of the application (root folder contains package.json), use `cd peachtree-bank`.
 - Run `npm install` to install all the dependencies.
-- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Run `ng serve` or `npm run start:proxy` (to hit proxy api using proxy config) for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 - Live app running : https://arunthakurxebia.github.io/
 
 ## Folder structure
