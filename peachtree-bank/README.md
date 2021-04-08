@@ -87,14 +87,14 @@ peachtree-bank --> Project directory
     │   │   │   ├── footer.component.html         |
     │   │   │   ├── footer.component.scss         |
     │   │   │   ├── footer.component.spec.ts      |=== Out of box component
-    │   │   │   └── footer.component.ts___________|
+    │   │   │   └── footer.component.ts__________//
     │   │   ├── interfaces --> interfaces to define contracts and types
     │   │   │   └── transaction.interface.ts --> interface for transaction item
     │   │   ├── logo______________________________
     │   │   │   ├── logo.component.html          |
     │   │   │   ├── logo.component.scss          |==== Out of box component
     │   │   │   ├── logo.component.spec.ts       |
-    │   │   │   └── logo.component.ts____________|
+    │   │   │   └── logo.component.ts_________////
     │   │   ├── pipes --> Pipes to add filters and formats
     │   │   │   ├── filter-by.pipe.spec.ts --> unit test cases for filterBy pipe
     │   │   │   ├── filter-by.pipe.ts --> logic of filter transaction by given value
@@ -115,12 +115,12 @@ peachtree-bank --> Project directory
     │   │   │   ├── submit-button.component.html    |
     │   │   │   ├── submit-button.component.scss    |===== Out of box component
     │   │   │   ├── submit-button.component.spec.ts |
-    │   │   │   └── submit-button.component.ts______|
-    │   │   └── transaction-item_________________________
+    │   │   │   └── submit-button.component.ts___////
+    │   │   └── transaction-item___________
     │   │       ├── transaction-item.component.html     |
     │   │       ├── transaction-item.component.scss     |=== Out of box component
     │   │       ├── transaction-item.component.spec.ts  |
-    │   │       └── transaction-item.component.ts_______|
+    │   │       └── transaction-item.component.ts___|
     │   ├── assets__________________
     │   │   ├── background.jpg      |
     │   │   ├── logo.jpg            |==== Assets files used in projects
