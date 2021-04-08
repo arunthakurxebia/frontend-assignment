@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faEuroSign, faWallet } from '@fortawesome/free-solid-svg-icons';
-import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core';
 import { GetTransactionsService } from 'src/app/services/get-transactions.service';
 import { UtilService } from 'src/app/services/util.service';
@@ -38,7 +38,7 @@ export class TransferMoneyFormComponent implements OnInit {
 ngOnInit() {
     this.moneyTransferForm = this.formBuilder.group({
       toAccount: new FormControl('', Validators.required),
-      amount: new FormControl('', [Validators.required, this.util.amountValidator(this.myBalance)])
+      amount: new FormControl('', [Validators.required, this.amountValidator()])
     });
   }
 
@@ -76,4 +76,16 @@ ngOnInit() {
     this.moneyTransferForm.reset();
     this.cdRef.markForCheck();
   }
+
+  /**
+ * Validate amount to over draft limit
+ */
+amountValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    if ((parseFloat(this.myBalance) + 500) < parseFloat(control.value)) {
+      return { amountValidator: true, requiredValue: this.myBalance };
+    }
+    return null;
+  };
+}
 }
