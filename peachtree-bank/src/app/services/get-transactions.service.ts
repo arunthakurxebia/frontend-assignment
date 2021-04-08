@@ -6,7 +6,8 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
   providedIn: 'root'
 })
 export class GetTransactionsService {
-  private apiHost = 'assets/transactions.json';
+  private mockApiHost = 'assets/transactions.json';
+  private apiHost = 'dev/transactions'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,16 +21,23 @@ export class GetTransactionsService {
   constructor(private http: HttpClient) {
     this.subscription.add(
       this.getTransacionsList().subscribe(res => {
-          this.dataSource.next(res.data);
+          this.dataSource.next(res);
       },
       err => {
-        console.log(err);
+        console.log("mocking data...");
+        this.getMockTransactionsList().subscribe(res => {
+          this.dataSource.next(res.data);
+        })
       })
     )
   }
 
   public getTransacionsList():Observable<any> {
     return this.http.get<any[]>(`${this.apiHost}`);
+  }
+
+  public getMockTransactionsList():Observable<any>{
+    return this.http.get<any[]>(`${this.mockApiHost}`);
   }
 
   updateTransactionList(item: any) {
