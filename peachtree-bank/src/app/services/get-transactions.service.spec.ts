@@ -4,6 +4,7 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 import { GetTransactionsService } from './get-transactions.service';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('GetTransactionsService', () => {
   let service: GetTransactionsService;
@@ -11,21 +12,10 @@ describe('GetTransactionsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [GetTransactionsService]
     });
     spyOn(GetTransactionsService.prototype, 'getTransacionsList');
     service = TestBed.get(GetTransactionsService);
-  });
-
-  it('can load instance', () => {
-    expect(service).toBeTruthy();
-  });
-
-  describe('constructor', () => {
-    it('makes expected calls', () => {
-      expect(
-        GetTransactionsService.prototype.getTransacionsList
-      ).toHaveBeenCalled();
-    });
   });
 });
