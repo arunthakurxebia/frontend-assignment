@@ -33,22 +33,22 @@ Use **download zip** option or use `git clone https://github.com/arunthakurxebia
 - Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 - Live app running : https://arunthakurxebia.github.io/
 
-peachtree-bank --> Project directory
-    ├── angular.json --> Angular configuration file 
-    ├── browserslist --> To adjust CSS and JS for specified browsers  
-    ├── e2e --> end to end test case folder
-    │   ├── protractor.conf.js --> protctor framework configuration
-    │   ├── src --> e2e root folder
-    │   │   ├── app.e2e-spec.ts --> spec for e2e test cases
-    │   │   └── app.po.ts --> e2e page Object Class 
-    │   └── tsconfig.json --> typescript configuration file
-    ├── karma.conf.js --> Karma unit testing config file
-    ├── package.json --> npm project dependecies file
-    ├── package-lock.json --> Automatically generated when node modules or package.json modifies.
-    ├── proxy.conf.json --> Proxy conifguration file to map url to specified server
-    ├── README.md --> Contains project overview
-    ├── src --> Root folder
-    │   ├── app --> Contains all feature development code, parent component for all feature components
+peachtree-bank --> Project directory                                                                                                                               
+    ├── angular.json --> Angular configuration file                                                                                                               
+    ├── browserslist --> To adjust CSS and JS for specified browsers                                                                                               
+    ├── e2e --> end to end test case folder                                                                                                                       
+    │   ├── protractor.conf.js --> protctor framework configuration                                                                                               
+    │   ├── src --> e2e root folder                                                                                                                               
+    │   │   ├── app.e2e-spec.ts --> spec for e2e test cases                                                                                                       
+    │   │   └── app.po.ts --> e2e page Object Class                                                                                                               
+    │   └── tsconfig.json --> typescript configuration file                                                                                                       
+    ├── karma.conf.js --> Karma unit testing config file                                                                                                           
+    ├── package.json --> npm project dependecies file                                                                                                             
+    ├── package-lock.json --> Automatically generated when node modules or package.json modifies.                                                                 
+    ├── proxy.conf.json --> Proxy conifguration file to map url to specified server                                                                               
+    ├── README.md --> Contains project overview                                                                                                                   
+    ├── src --> Root folder                                                                                                                                       
+    │   ├── app --> Contains all feature development code, parent component for all feature components                                                             
     │   │   ├── app.component.html --> html code for app component
     │   │   ├── app.component.scss --> style for app component 
     │   │   ├── app.component.spec.ts --> unit tests for app component
