@@ -30,7 +30,7 @@ export class GetTransactionsService {
           this.dataSource.next(res);
       },
       err => {
-        console.log("mocking data...");
+        console.log("mocking data..."); //to inform client about mocking
         this.getMockTransactionsList().subscribe(res => {
           this.dataSource.next(res.data);
         })

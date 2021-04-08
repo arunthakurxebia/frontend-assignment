@@ -1,5 +1,8 @@
 @import '../../../styles/main.scss';
 .transfer-money-container{
+    @include xs{
+        margin:10px auto;
+    }
     @include sm{
         margin:10px auto;
     }

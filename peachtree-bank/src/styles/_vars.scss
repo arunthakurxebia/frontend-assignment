@@ -28,8 +28,15 @@ $small-font: 12px;
 $desktop:990px;
 $tablet:768px;
 $phone:320px;
+$phone-xs:319px;
 
 // phone
+@mixin xs {
+  @media (max-width: #{$phone-xs}) {
+      @content;
+  }
+}
+
 @mixin sm {
     @media (min-width: #{$phone}) {
         @content;
