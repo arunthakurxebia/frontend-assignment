@@ -77,7 +77,7 @@ ngOnInit() {
     this.cdRef.markForCheck();
   }
 
-  /**
+/**
  * Validate amount to over draft limit
  */
 amountValidator(): ValidatorFn {
