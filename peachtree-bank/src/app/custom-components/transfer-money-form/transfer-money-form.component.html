@@ -24,15 +24,15 @@
                 <label class="pt-label">Amount</label>
                 <div class="pt-inp-icon-group">
                     <span class="pt-inp-icon"
-                        [ngClass]="[(submitted && moneyTransferFormControl.amount.errors) || (moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']">
+                        [ngClass]="[(submitted && moneyTransferFormControl.amount.errors) || (moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors) || (moneyTransferFormControl.amount.dirty && !(moneyTransferFormControl.amount.value > 0))  ? 'hasError' : '']">
                         <fa-icon [icon]="faEuroSign"></fa-icon>
                     </span>
                     <input type="text" required aria-describedby="transactionAmount" id="amount"
-                        [ngClass]="[(submitted && moneyTransferFormControl.amount.errors) || (moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors)  ? 'hasError' : '']"
+                        [ngClass]="[(submitted && moneyTransferFormControl.amount.errors) || (moneyTransferFormControl.amount.dirty && moneyTransferFormControl.amount.errors) || (moneyTransferFormControl.amount.dirty && !(moneyTransferFormControl.amount.value > 0)) ? 'hasError' : '']"
                         class="pt-input" tabindex="1" formControlName="amount" appAmount
                         placeholder="Specify the amount" value="" />
                     <div class="text-danger mt2"
-                        *ngIf="((submitted || moneyTransferFormControl.amount.dirty) && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator)">
+                        *ngIf="((submitted || moneyTransferFormControl.amount.dirty) && moneyTransferFormControl.amount.errors && !moneyTransferFormControl.amount.errors.amountValidator) || (moneyTransferFormControl.amount.dirty && !(moneyTransferFormControl.amount.value > 0))">
                         This field is required
                     </div>
                     <div class="text-danger mt2"
