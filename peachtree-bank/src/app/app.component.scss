@@ -5,11 +5,13 @@
         font-size: $regular-font;
         padding: $medium-spacing;
         color: $primary-blue;
+        box-shadow: inset 0px -5px 3px -4px #9e9e9ea3;
         @include sm {
             height: 60px;
         }
         @include md {
-            height: 50px;
+            height: 60px;
+            padding-top: 12px;
         }
         .logo-container{
             float: left;

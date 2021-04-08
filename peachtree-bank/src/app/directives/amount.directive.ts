@@ -4,8 +4,13 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
   selector: '[appAmount]'
 })
 export class AmountDirective {
-
-  @HostListener('input', ['$event']) onInputChange(event) {
+/**
+ * Format the amount on input
+ *
+ * @param {*} event
+ * @memberof AmountDirective
+ */
+@HostListener('input', ['$event']) onInputChange(event) {
     let initalValue: string = this.el.nativeElement.value;
     if (initalValue) {
       initalValue = initalValue.replace(/[^\.|0-9]/g, '');
@@ -21,6 +26,11 @@ export class AmountDirective {
     }
   }
 
+  /**
+   * Format amount to 2 demial places
+   *
+   * @memberof AmountDirective
+   */
   @HostListener('blur')
   setInputFocusOut(): void {
     const initalValue: string = this.el.nativeElement.value;
@@ -29,6 +39,13 @@ export class AmountDirective {
     }
   }
 
+  /**
+   * Remove second decimal value
+   *
+   * @param {*} inputString
+   * @return {*}  {string}
+   * @memberof AmountDirective
+   */
   repaceSecondDotOccurrence(inputString): string {
     let t = 0;
     return inputString.replace(/\./g, (match) => {
@@ -36,6 +53,14 @@ export class AmountDirective {
       return (t === 2) ? '' : match;
     });
   }
+
+  /**
+   * Format amount on input to two decimal places
+   *
+   * @param {*} inputString
+   * @return {*} 
+   * @memberof AmountDirective
+   */
   twoDecimalPoint(inputString) {
     if (inputString.split('.')[1]) {
       return parseFloat(inputString).toFixed(2);

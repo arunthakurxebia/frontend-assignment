@@ -29,15 +29,32 @@ export class ReviewModalComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
+  /**
+   * Listen on change event
+   *
+   * @param {SimpleChanges} changes
+   * @memberof ReviewModalComponent
+   */
   ngOnChanges(changes: SimpleChanges): void {
     this.showModal = this.show;
   }
 
+  /**
+   * Action to perform on modal confirm
+   *
+   * @param {*} e
+   * @memberof ReviewModalComponent
+   */
   submitForm(e: any) {
     this.confirm.emit(e);
     this.showModal = false;
   }
 
+  /**
+   *Action to perform on close
+   *
+   * @memberof ReviewModalComponent
+   */
   close() {
     this.showModal = false;
     this.isOpen.emit(false);

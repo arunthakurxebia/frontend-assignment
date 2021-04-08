@@ -18,7 +18,13 @@ export class LoaderInterceptorService {
 
   constructor(private loaderService: LoaderService) { }
 
-  removeRequest(req: HttpRequest<any>) {
+/**
+ * Remove request from queue
+ *
+ * @param {HttpRequest<any>} req
+ * @memberof LoaderInterceptorService
+ */
+removeRequest(req: HttpRequest<any>) {
     const i = this.requests.indexOf(req);
     if (i >= 0) {
       this.requests.splice(i, 1);
@@ -26,6 +32,14 @@ export class LoaderInterceptorService {
     this.loaderService.isLoading.next(this.requests.length > 0);
   }
 
+  /**
+   * Intercept API calls
+   *
+   * @param {HttpRequest<any>} req
+   * @param {HttpHandler} next
+   * @return {*}  {Observable<HttpEvent<any>>}
+   * @memberof LoaderInterceptorService
+   */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     this.requests.push(req);

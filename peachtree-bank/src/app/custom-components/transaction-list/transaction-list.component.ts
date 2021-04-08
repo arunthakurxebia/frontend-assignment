@@ -16,6 +16,11 @@ export class TransactionListComponent implements OnInit {
   marchentName: string = '';
   constructor(private dataService: GetTransactionsService) { }
 
+  /**
+   * Operation to perform on Initialize
+   *
+   * @memberof TransactionListComponent
+   */
   ngOnInit() {
     this.dataService.transactions.subscribe(res => {
       this.transactions = res.sort((a:any, b:any) => +new Date(b.dates.valueDate) - +new Date(a.dates.valueDate));
@@ -25,6 +30,12 @@ export class TransactionListComponent implements OnInit {
     })
   }
 
+  /**
+   * Get the changes value of input
+   *
+   * @param {*} e
+   * @memberof TransactionListComponent
+   */
   inputChange(e: any) {
     this.marchentName = e;
   }
