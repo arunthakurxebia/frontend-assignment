@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetTransactionsService {
   private mockApiHost = 'assets/transactions.json';
-  private apiHost = 'dev/transactions'
+  private apiHost = `${environment.url}dev/transactions`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
