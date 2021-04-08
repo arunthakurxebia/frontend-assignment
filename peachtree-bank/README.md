@@ -138,12 +138,12 @@ peachtree-bank --> Project directory
     │   │   ├── _form.scss --> form element related styling													
     │   │   ├── _global.scss --> global styling to apply on whole application											
     │   │   ├── main.scss --> main file contains all .sccs file imports												
-    │   │   ├── _typography.scss --> typographic styling													
-    │   │   └── _vars.scss --> common variable to be used in all other scss											
-    │   ├── styles.scss --> theme imports, this file is injected inside angular project configuration in angular.json						
-    │   ├── test.ts --> entry point of karma tests														
-    │   └── typing.d.ts --> contains only the type annotations													
-    ├── tsconfig.app.json --> customize the options from tsconfig.json												
-    ├── tsconfig.json --> provides the base options that different config files derive from									
-    ├── tsconfig.spec.json --> typescript unit testing configuration												
-    └── tslint.json --> linting configuration         														  
+    │   │   ├── _typography.scss --> typographic styling													                                                                                
+    │   │   └── _vars.scss --> common variable to be used in all other scss											                                                                  
+    │   ├── styles.scss --> theme imports, this file is injected inside angular project configuration in angular.json						                                  
+    │   ├── test.ts --> entry point of karma tests														                                                                                    
+    │   └── typing.d.ts --> contains only the type annotations													                                                                          
+    ├── tsconfig.app.json --> customize the options from tsconfig.json												                                                                    
+    ├── tsconfig.json --> provides the base options that different config files derive from									                                                      
+    ├── tsconfig.spec.json --> typescript unit testing configuration												                                                                      
+    └── tslint.json --> linting configuration                                                                                                                             														  
