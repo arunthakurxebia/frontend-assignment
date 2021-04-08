@@ -69,7 +69,7 @@ peachtree-bank --> Project directory
     │   │   │   │   ├── transaction-list.component.html --> html code for transaction list									
     │   │   │   │   ├── transaction-list.component.scss --> styling for transaction list									
     │   │   │   │   ├── transaction-list.component.spec.ts --> unit test cases for transaction list								
-    │   │   │   │   └── transaction-list.component.ts --> functions and events for transaction list								
+    │   │   │   │   └── transaction-list.component.ts --> functions and events for transaction list***								
     │   │   │   └── transfer-money-form --> Component form to transfer money from one account to another							
     │   │   │       ├── transfer-money-form.component.html --> html code for transfer money from								
     │   │   │       ├── transfer-money-form.component.scss --> styling for transfer money from									
