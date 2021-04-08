@@ -11,15 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AmountDirective } from './directives/amount.directive';
 import { ReviewModalComponent } from './custom-components/review-modal/review-modal.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { PtDatePipe } from './pipe/pt-date.pipe';
-import { FilterByPipe } from './pipe/filter-by.pipe';
+import { PtDatePipe } from './pipes/pt-date.pipe';
+import { FilterByPipe } from './pipes/filter-by.pipe';
 import { FilterComponent } from './filter/filter.component';
 import { TransferMoneyFormComponent } from './custom-components/transfer-money-form/transfer-money-form.component';
 import { TransactionListComponent } from './custom-components/transaction-list/transaction-list.component';
 import { LoaderComponent } from './custom-components/loader/loader.component';
 import { LoaderService } from './services/loader.service';
-import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
-import { PtCurrencyPipe } from './pipe/pt-currency.pipe';
+import { PtCurrencyPipe } from './pipes/pt-currency.pipe';
+import { LoaderInterceptorService } from './services/loader-interceptor.service';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpRequest } from '@angular/common/http';
 import { HttpHandler } from '@angular/common/http';
-import { LoaderService } from '../services/loader.service';
+import { LoaderService } from './loader.service';
 import { LoaderInterceptorService } from './loader-interceptor.service';
 
 describe('LoaderInterceptorService', () => {
