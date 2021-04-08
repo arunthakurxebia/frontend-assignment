@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
@@ -7,13 +7,12 @@ import { LoaderService } from 'src/app/services/loader.service';
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
-  isLoading: boolean = true;
-  constructor(private loaderService: LoaderService, private cdRef: ChangeDetectorRef,) {}
+  isLoading = true;
+  constructor(private loaderService: LoaderService) { }
 
   /**
    * Operations to perform on initialize
    *
-   * @memberof LoaderComponent
    */
   ngOnInit() {
     this.loaderService.isLoading.subscribe((res) => {

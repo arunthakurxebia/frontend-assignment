@@ -21,15 +21,4 @@ describe('LoaderInterceptorService', () => {
   it('can load instance', () => {
     expect(service).toBeTruthy();
   });
-
-  describe('intercept', () => {
-    it('makes expected calls', () => {
-      const httpRequestStub: HttpRequest<any> = <any>{};
-      const httpHandlerStub: HttpHandler = <any>{};
-      spyOn(httpHandlerStub, 'handle').and.callThrough();
-      service.intercept(httpRequestStub, httpHandlerStub);
-      expect(service.removeRequest).toHaveBeenCalled();
-      expect(httpHandlerStub.handle).toHaveBeenCalled();
-    });
-  });
 });

@@ -6,10 +6,6 @@ import { GetTransactionsService } from 'src/app/services/get-transactions.servic
 import { UtilService } from 'src/app/services/util.service';
 /**
  * Componet for transfer money form
- *
- * @export
- * @class TransferMoneyFormComponent
- * @implements {OnInit}
  */
 @Component({
   selector: 'app-transfer-money-form',
@@ -38,8 +34,6 @@ export class TransferMoneyFormComponent implements OnInit {
     private cdRef: ChangeDetectorRef) { }
 /**
  *  Operation to perform on initialization
- *
- * @memberof TransferMoneyFormComponent
  */
 ngOnInit() {
     this.moneyTransferForm = this.formBuilder.group({
@@ -50,9 +44,6 @@ ngOnInit() {
 
   /**
    * Validate action on submit
-   *
-   * @return {*} 
-   * @memberof TransferMoneyFormComponent
    */
   submitForm() {
     this.amount = parseFloat(this.moneyTransferFormControl.amount.value).toFixed(2);
@@ -66,9 +57,6 @@ ngOnInit() {
 
   /**
    * Get open/close status of modal
-   *
-   * @param {*} $event
-   * @memberof TransferMoneyFormComponent
    */
   isOpen($event: any) {
     this.showModal = false;
@@ -76,9 +64,6 @@ ngOnInit() {
 
   /**
    * Post data to update on confirm review payment
-   *
-   * @param {*} $event
-   * @memberof TransferMoneyFormComponent
    */
   confirm($event: any) {
     this.dataService.updateTransactionList({

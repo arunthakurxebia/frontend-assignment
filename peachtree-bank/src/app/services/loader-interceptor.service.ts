@@ -18,13 +18,10 @@ export class LoaderInterceptorService {
 
   constructor(private loaderService: LoaderService) { }
 
-/**
- * Remove request from queue
- *
- * @param {HttpRequest<any>} req
- * @memberof LoaderInterceptorService
- */
-removeRequest(req: HttpRequest<any>) {
+  /**
+   * Remove request from queue
+   */
+  removeRequest(req: HttpRequest<any>) {
     const i = this.requests.indexOf(req);
     if (i >= 0) {
       this.requests.splice(i, 1);
@@ -34,18 +31,13 @@ removeRequest(req: HttpRequest<any>) {
 
   /**
    * Intercept API calls
-   *
-   * @param {HttpRequest<any>} req
-   * @param {HttpHandler} next
-   * @return {*}  {Observable<HttpEvent<any>>}
-   * @memberof LoaderInterceptorService
    */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     this.requests.push(req);
 
     this.loaderService.isLoading.next(true);
-    return Observable.create(observer => {
+    return new Observable(observer => {
       const subscription = next.handle(req)
         .subscribe(
           event => {
@@ -65,13 +57,13 @@ removeRequest(req: HttpRequest<any>) {
       // remove request from queue when cancelled
       return () => {
         next.handle(req)
-        .pipe(
-        delay(1000),
-        finalize(() => {
-          this.removeRequest(req);
-          subscription.unsubscribe();
-        })
-        )
+          .pipe(
+            delay(1000),
+            finalize(() => {
+              this.removeRequest(req);
+              subscription.unsubscribe();
+            })
+          );
       };
     });
   }

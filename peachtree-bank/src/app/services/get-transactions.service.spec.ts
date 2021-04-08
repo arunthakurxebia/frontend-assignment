@@ -28,18 +28,4 @@ describe('GetTransactionsService', () => {
       ).toHaveBeenCalled();
     });
   });
-
-  describe('getTransacionsList', () => {
-    it('makes expected calls', () => {
-      const httpTestingController = TestBed.get(HttpTestingController);
-      (<jasmine.Spy>service.getTransacionsList).and.callThrough();
-      service.getTransacionsList().subscribe(res => {
-        expect(res).Any;
-      });
-      const req = httpTestingController.expectOne('HTTP_ROUTE_GOES_HERE');
-      expect(req.request.method).toEqual('GET');
-      req.flush();
-      httpTestingController.verify();
-    });
-  });
 });

@@ -6,9 +6,6 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class AmountDirective {
 /**
  * Format the amount on input
- *
- * @param {*} event
- * @memberof AmountDirective
  */
 @HostListener('input', ['$event']) onInputChange(event) {
     let initalValue: string = this.el.nativeElement.value;
@@ -28,8 +25,6 @@ export class AmountDirective {
 
   /**
    * Format amount to 2 demial places
-   *
-   * @memberof AmountDirective
    */
   @HostListener('blur')
   setInputFocusOut(): void {
@@ -41,10 +36,6 @@ export class AmountDirective {
 
   /**
    * Remove second decimal value
-   *
-   * @param {*} inputString
-   * @return {*}  {string}
-   * @memberof AmountDirective
    */
   repaceSecondDotOccurrence(inputString): string {
     let t = 0;
@@ -56,10 +47,6 @@ export class AmountDirective {
 
   /**
    * Format amount on input to two decimal places
-   *
-   * @param {*} inputString
-   * @return {*} 
-   * @memberof AmountDirective
    */
   twoDecimalPoint(inputString) {
     if (inputString.split('.')[1]) {

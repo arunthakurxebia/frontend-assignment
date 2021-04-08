@@ -12,7 +12,7 @@ export class GetTransactionsService {
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
+  };
   private subscription = new Subscription();
 
   private dataSource = new BehaviorSubject<any[]>([]);
@@ -21,48 +21,37 @@ export class GetTransactionsService {
 
   /**
    * Creates an instance of GetTransactionsService.
-   * @param {HttpClient} http
-   * @memberof GetTransactionsService
    */
   constructor(private http: HttpClient) {
     this.subscription.add(
       this.getTransacionsList().subscribe(res => {
-          this.dataSource.next(res);
+        this.dataSource.next(res);
       },
-      err => {
-        console.log("mocking data..."); //to inform client about mocking
-        this.getMockTransactionsList().subscribe(res => {
-          this.dataSource.next(res.data);
+        err => {
+          console.log('mocking data...'); // to inform client about mocking
+          this.getMockTransactionsList().subscribe(res => {
+            this.dataSource.next(res.data);
+          });
         })
-      })
-    )
+    );
   }
 
   /**
    * Get transaction list from rest API
-   *
-   * @return {*}  {Observable<any>}
-   * @memberof GetTransactionsService
    */
-  public getTransacionsList():Observable<any> {
+  public getTransacionsList(): Observable<any> {
     return this.http.get<any[]>(`${this.apiHost}`);
   }
 
   /**
    * Get transaction list from local mock json
-   *
-   * @return {*}  {Observable<any>}
-   * @memberof GetTransactionsService
    */
-  public getMockTransactionsList():Observable<any>{
+  public getMockTransactionsList(): Observable<any> {
     return this.http.get<any[]>(`${this.mockApiHost}`);
   }
 
   /**
    * Update transactionlist stored in local onject
-   *
-   * @param {*} item
-   * @memberof GetTransactionsService
    */
   updateTransactionList(item: any) {
     const dataPayload = {

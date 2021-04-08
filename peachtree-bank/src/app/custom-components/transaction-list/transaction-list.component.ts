@@ -13,28 +13,23 @@ export class TransactionListComponent implements OnInit {
   faSearch = faSearch;
   faEuroSign = faEuroSign;
   transactions: any;
-  marchentName: string = '';
+  marchentName = '';
   constructor(private dataService: GetTransactionsService) { }
 
   /**
    * Operation to perform on Initialize
-   *
-   * @memberof TransactionListComponent
    */
   ngOnInit() {
     this.dataService.transactions.subscribe(res => {
-      this.transactions = res.sort((a:any, b:any) => +new Date(b.dates.valueDate) - +new Date(a.dates.valueDate));
+      this.transactions = res.sort((a: any, b: any) => +new Date(b.dates.valueDate) - +new Date(a.dates.valueDate));
     },
-    err => {
-      console.log(err);
-    })
+      err => {
+        console.log(err);
+      });
   }
 
   /**
    * Get the changes value of input
-   *
-   * @param {*} e
-   * @memberof TransactionListComponent
    */
   inputChange(e: any) {
     this.marchentName = e;

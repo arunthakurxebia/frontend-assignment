@@ -9,10 +9,6 @@ export class UtilService {
   constructor() { }
 /**
  * Validate amount to over draft limit
- *
- * @param {string} val
- * @return {*}  {ValidatorFn}
- * @memberof UtilService
  */
 amountValidator(val: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
